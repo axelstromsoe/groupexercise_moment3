@@ -10,7 +10,7 @@ class Signup
     /* ------ Metoder ------ */
 
     // Konstruerare
-    public function __constructor(string $email)
+    public function __construct(string $email)
     {
 
         $this->email = $email;
@@ -25,7 +25,8 @@ class Signup
             // Sparar till email_list
             $this->email_list = $email_list;
         } else {
-
+            
+            file_put_contents("email.json", "[]");
             $this->email_list = [];
         }
     }

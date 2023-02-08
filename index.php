@@ -23,6 +23,7 @@ use function PHPSTORM_META\type;
 if(isset($_POST['email'])){
 
   $signup = new Signup($_POST['email']);
+  var_dump($signup->saveEmail());
 } 
 
  ?>
