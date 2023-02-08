@@ -1,5 +1,5 @@
 <?php
-
+$title = 'Övningsuppgifter';
 // Inkluderar alla klasser
 spl_autoload_register(function($className) {
     include("inc/classes/$className.class.php");
