@@ -2,7 +2,7 @@
 
 // Inkluderar alla klasser
 spl_autoload_register(function($className) {
-    include("includes/classes/$className.class.php");
+    include("inc/classes/$className.class.php");
 });
 
 // Aktiverar felrapportering
