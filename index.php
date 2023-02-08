@@ -19,10 +19,11 @@ use function PHPSTORM_META\type;
 <br>
  <hr>
  <?php
-$signup = new Signup();
 
 if(isset($_POST['email'])){
-  $signup->setEmail($_POST['email']);
+
+  $signup = new Signup($_POST['email']);
+  $signup->saveEmail();
 } 
 
  ?>

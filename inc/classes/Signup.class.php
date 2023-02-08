@@ -24,7 +24,6 @@ class Signup
 
             // Sparar till email_list
             $this->email_list = $email_list;
-
         } else {
 
             $this->email_list = [];
@@ -46,9 +45,24 @@ class Signup
     }
 
     // Sparar e-post
-    public function saveEmail(): bool{
+    public function saveEmail(): bool
+    {
 
-        return true;
+        if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
+
+            array_push($this->email_list, $this->email);
+
+            // Konvertera array till JSON-format
+            $jsonData = json_encode($this->email_list, JSON_PRETTY_PRINT);
+
+            // Skriv till JSON-fil
+            file_put_contents("email.json", $jsonData);
+
+            return true;
+        } else {
+
+            return false;
+        }
     }
 
     // get-metoder
