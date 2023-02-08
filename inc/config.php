@@ -1,7 +1,11 @@
 <?php
 
-$title = "Moment 3 DT093G";
-
-spl_autoload_register(function ($class_name) {
-    include 'classes/' . $class_name . '.class.php'; //sökväg till mappen för dina klasser
+// Inkluderar alla klasser
+spl_autoload_register(function($className) {
+    include("includes/classes/$className.class.php");
 });
+
+// Aktiverar felrapportering
+error_reporting(-1);
+ini_set("display_errors", 1);
+?>
